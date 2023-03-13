@@ -12,7 +12,12 @@ function generatePassword(){
   let newPsw="";
   let validChars="";
 
-  
+  pLen = parseInt(prompt("enter password length between 8-128"));
+  if (pLen<8 || pLen>128 || isNaN(pLen)){
+    alert ('the password length has to be a number between 8-128')
+
+    return("password not generated please retry by clicking on generate button")
+  }
 }
 // Write password to the #password input
 function writePassword() {
