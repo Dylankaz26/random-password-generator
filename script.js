@@ -15,9 +15,20 @@ function generatePassword(){
   pLen = parseInt(prompt("enter password length between 8-128"));
   if (pLen<8 || pLen>128 || isNaN(pLen)){
     alert ('the password length has to be a number between 8-128')
-
     return("password not generated please retry by clicking on generate button")
   }
+  let useLower = confirm("press ok to include lowercase characters in password. Press cancel to exclude");
+  let useUpper = confirm("press ok to include uppercase characters in password. Press cancel to exclude");
+  let useNum = confirm("press ok to include numeric characters in password. Press cancel to exclude");
+  let useSpecial = confirm("press ok to include special characters in password. Press cancel to exclude");
+
+  if (useLower){
+    validChars += lower;
+    alert("your password will include lowercase characters");
+  } else {
+    alert("your password will exclude lowercase characters");
+  }
+
 }
 // Write password to the #password input
 function writePassword() {
