@@ -29,6 +29,26 @@ function generatePassword(){
     alert("your password will exclude lowercase characters");
   }
 
+  if (useUpper){
+    validChars += upper;
+    alert("your password will include uppercase characters");
+  } else {
+    alert("your password will exclude uppercase characters");
+  }
+
+  if (useNum){
+    validChars += num;
+    alert("your password will include numeric characters");
+  } else {
+    alert("your password will exclude numeric characters");
+  }
+
+  if (useSpecial){
+    validChars += special;
+    alert("your password will include special characters");
+  } else {
+    alert("your password will exclude special characters");
+  }
 }
 // Write password to the #password input
 function writePassword() {
