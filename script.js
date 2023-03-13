@@ -49,6 +49,11 @@ function generatePassword(){
   } else {
     alert("your password will exclude special characters");
   }
+  if (useLower === false && useUpper === false && useNum === false && useSpecial === false ){
+    alert ('at least one character type should be selected')
+    return("password not generated please retry by clicking on generate button")
+  }
+  //forloop generate random password and return password
 }
 // Write password to the #password input
 function writePassword() {
