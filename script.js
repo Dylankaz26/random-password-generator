@@ -10,6 +10,8 @@ function generatePassword(){
   let special="!@#$%^&*()|{}/";
   let pLen=0;
   let newPsw="";
+  let randomIndex=0;
+  let randomChar="";
   let validChars="";
 
   pLen = parseInt(prompt("enter password length between 8-128"));
@@ -54,6 +56,14 @@ function generatePassword(){
     return("password not generated please retry by clicking on generate button")
   }
   //forloop generate random password and return password
+
+  for(let i=0; i<=pLen; i++){
+    randomIndex = Math.floor(Math.random() * pLen);
+    randomChar = validChars[randomIndex];
+    newPsw += randomChar;
+  }
+
+  return newPsw;
 }
 // Write password to the #password input
 function writePassword() {
