@@ -19,10 +19,16 @@ function generatePassword(){
     alert ('the password length has to be a number between 8-128')
     return("password not generated please retry by clicking on generate button")
   }
+  console.log("pLen = ",pLen);
   let useLower = confirm("press ok to include lowercase characters in password. Press cancel to exclude");
   let useUpper = confirm("press ok to include uppercase characters in password. Press cancel to exclude");
   let useNum = confirm("press ok to include numeric characters in password. Press cancel to exclude");
   let useSpecial = confirm("press ok to include special characters in password. Press cancel to exclude");
+
+  console.log("useLower = ",useLower);
+  console.log("useUpper = ",useUpper);
+  console.log("useNum = ",useNum);
+  console.log("useSpecial = ",useSpecial);
 
   if (useLower){
     validChars += lower;
@@ -31,12 +37,16 @@ function generatePassword(){
     alert("your password will exclude lowercase characters");
   }
 
+  console.log("validChars = ",validChars);
+
   if (useUpper){
     validChars += upper;
     alert("your password will include uppercase characters");
   } else {
     alert("your password will exclude uppercase characters");
   }
+
+  console.log("validChars = ",validChars);
 
   if (useNum){
     validChars += num;
@@ -45,12 +55,16 @@ function generatePassword(){
     alert("your password will exclude numeric characters");
   }
 
+  console.log("validChars = ",validChars);
+
   if (useSpecial){
     validChars += special;
     alert("your password will include special characters");
   } else {
     alert("your password will exclude special characters");
   }
+  console.log("validChars = ",validChars);
+
   if (useLower === false && useUpper === false && useNum === false && useSpecial === false ){
     alert ('at least one character type should be selected')
     return("password not generated please retry by clicking on generate button")
@@ -58,9 +72,12 @@ function generatePassword(){
   //forloop generate random password and return password
 
   for(let i=0; i<=pLen; i++){
-    randomIndex = Math.floor(Math.random() * pLen);
+    randomIndex = Math.floor(Math.random() * validChars.length);
+    console.log("randomIndex = ",randomIndex);
     randomChar = validChars[randomIndex];
+    console.log("randomChar = ",randomChar);
     newPsw += randomChar;
+    console.log("newPsw = ",newPsw);
   }
 
   return newPsw;
